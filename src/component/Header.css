@@ -12,7 +12,6 @@
 
 .dropbtn {
     color: white;
-    padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -44,4 +43,11 @@
   
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+  .avatar {
+    border-radius: 3rem !important;
+    height: 35px;
+    margin-top: -10px;
+    margin-right:-10px;
   }

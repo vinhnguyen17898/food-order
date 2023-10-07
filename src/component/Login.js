@@ -17,7 +17,6 @@ const Login = () => {
     const [isLogged, setIsLogged] = useState(false);
     const signIn = () => {
         signInWithPopup(auth, provider).then((data) => {
-            console.log(data.user);
             setIsLogged(true);
             navigate("/");
             localStorage.setItem("user", JSON.stringify(data.user));
