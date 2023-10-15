@@ -5,6 +5,7 @@ import React, { useRef } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, provider } from "../firebase"
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Register = () => {
                 .then((userCredential) => {
                     // Signed up 
                     const user = userCredential.user;
-                    localStorage.setItem("email", user.email);
+                    localStorage.setItem("email", user);
                     navigate("/");
                 })
                 .catch((error) => {
@@ -47,6 +48,7 @@ const Register = () => {
                     <Button variant="primary" onClick={register}>Register</Button>
                 </Form>
             </Container>
+            <Footer/>
         </div >
     )
 }

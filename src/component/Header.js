@@ -9,6 +9,8 @@ const Header = () => {
     const [isLogged, setIsLogged] = useState(false);
     const [user, setUser] = useState();
     const navigate = useNavigate();
+    const urlAvatar = user?user.hasOwnProperty("photoURL")?user.photoURL:'':'';
+    const nameDisplay = user?user.hasOwnProperty("displayName")?user.displayName: user.email:'';
     const logout = () => {
         localStorage.removeItem("user");
         setIsLogged(false);
@@ -28,8 +30,8 @@ const Header = () => {
         <div style={{ float: "right", marginTop:"10px" }}>
             {!isLogged && <Link className="button" to={'/login'}>Login</Link>}
             {!isLogged && <Link className="button" to={'/register'}>Register</Link>}
-            {isLogged && <><img className="avatar" src={user&&user.photoURL} /><div className="dropdown">
-                <button className="dropbtn button" style={{marginTop:"0"}}>{user&&user.displayName}</button>
+            {isLogged && <><img className="avatar" src={urlAvatar} /><div className="dropdown">
+                <button className="dropbtn button" style={{marginTop:"0"}}>{nameDisplay}</button>
                 <div className="dropdown-content">
                     <button onClick={logout} style={{border:"none", background:"none"}} >Logout</button>
                 </div>

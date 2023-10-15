@@ -1,11 +1,11 @@
-.menu{
+.menu {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     min-height: 80vh;
 }
 
-.menu button{
+.menu button {
     width: 300px;
     background: none;
     border: 2px solid white;
@@ -16,20 +16,20 @@
     font-weight: 700 !important;
 }
 
-.step2{
+.step2 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     min-height: 50vh;
 }
 
-.step2 .shoppe h1{
+.step2 .shoppe h1 {
     color: white;
     font-weight: 700 !important;
     margin-bottom: 30px;
 }
 
-.step2 .shoppe div input{
+.step2 .shoppe div input {
     background: none;
     border: none;
     border-bottom: 2px solid white;
@@ -37,14 +37,29 @@
     color: white;
 }
 
-.step2 .shoppe div{
+.step2 .shoppe div {
     margin-bottom: 50px;
 }
 
-.step2 .shoppe .button2{
+.step2 .shoppe .button2 {
     border-radius: 3rem;
     line-height: 40px;
     font-size: 25px !important;
     font-weight: 700 !important;
     width: 600px;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.gen {
+    border-radius: 3rem !important;
+    line-height: 40px;
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    width: 600px;
+
 }

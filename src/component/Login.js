@@ -27,8 +27,7 @@ const Login = () => {
         if (emailRef.current.value != '' && emailRef.current.value.includes("@") && passwordRef.current.value != '') {
             signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value).then((userCredential) => {
                 // Signed in 
-                const user = userCredential.user;
-                localStorage.setItem("user", JSON.tringify(user));
+                localStorage.setItem("user", JSON.stringify(userCredential.user));
                 navigate("/");
             })
                 .catch((err) => {

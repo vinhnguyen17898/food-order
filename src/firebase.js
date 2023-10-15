@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getAuth, GoogleAuthProvider} from "firebase/auth"
+import { getDatabase } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,7 +15,8 @@ const firebaseConfig = {
   storageBucket: "food-order-ebd81.appspot.com",
   messagingSenderId: "858733929222",
   appId: "1:858733929222:web:9cf21b8c57439de5b93487",
-  measurementId: "G-PZ1W18DN18"
+  measurementId: "G-PZ1W18DN18",
+  databaseURL: "https://food-order-ebd81-default-rtdb.firebaseio.com/"
 };
 
 // Initialize Firebase
@@ -22,4 +24,5 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-export {auth, provider};
+const db = getDatabase(app);
+export {auth, provider, db};
